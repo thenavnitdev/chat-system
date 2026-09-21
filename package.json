@@ -1,0 +1,26 @@
+{
+  "name": "resumable-conversation",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "NODE_ENV=development tsx watch src/server/index.ts",
+    "build": "tsc && npm run build:client",
+    "build:client": "esbuild src/client/browser-main.ts --bundle --outfile=public/client.js --platform=browser --target=es2020",
+    "start": "npm run build && node dist/server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.20",
+    "@types/node": "^20.9.0",
+    "@types/ws": "^8.5.8",
+    "esbuild": "^0.19.5",
+    "tsx": "^4.6.0",
+    "typescript": "^5.2.2",
+    "vitest": "^0.34.6"
+  }
+}
